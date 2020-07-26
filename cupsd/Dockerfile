@@ -1,7 +1,4 @@
-ARG BASE_USER
-ARG MAINTAINER
-FROM ${BASE_USER}/debian:testing
-MAINTAINER $MAINTAINER
+FROM debian:10.4
 
 # Install Packages (basic tools, cups, basic drivers, HP drivers)
 RUN apt-get update \
