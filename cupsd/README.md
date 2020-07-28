@@ -14,6 +14,12 @@ docker run -d -p 631:631 -v /var/run/dbus:/var/run/dbus --name cupsd olbat/cupsd
 
 __Note__: The admin user/password for the Cups server is `print`/`print`
 
+## Run on host network
+
+```bash
+docker run --restart unless-stopped -d --network host --privileged -v /var/run/dbus:/var/run/dbus -v /dev:/dev --name cupsd cupsd
+```
+
 ## Configure Cups client on your machine
 1. Install the `cups-client` package
 2. Edit the `/etc/cups/client.conf`, set `ServerName` to `127.0.0.1:631`
